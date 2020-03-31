@@ -1,0 +1,81 @@
+<!--
+    INTEGRANTES:
+        RODRIGO CARVAJAL SANDOVAL   -   19.333.972-7
+        NICOLAS RUIZ SAN MARTIN     -   19.716.810-2
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Vacunatorio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body style="background: #50A47A; ">
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Vacunatorio Coelemu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Listado pacientes<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/vacunas">Listado vacunas<span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <br>
+    <!--FIN NAVBAR-->
+    
+    <div class="container" style="padding: 3%; background: #ffffff; border-radius: 15px 15px 15px 15px;
+                                                                -moz-border-radius: 15px 15px 15px 15px;
+                                                                -webkit-border-radius: 15px 15px 15px 15px;
+                                                                border: 0px none #000000;">
+        <h2>Vacunar Paciente</h2><br>
+        <form action="/paciente/{{ paciente.0.1 }}/addVacuna/agregar" method="POST">
+            <!-- <label for="nombre">Nombre: </label>
+            <strong><span name="nombre">{{ paciente.0.0 }}</span></strong>
+            <br>
+            <label for="run">RUN: </label>
+            <strong><span name="run"> {{ paciente.0.1 }} </span></strong>
+            <br>
+            <label for="fechaNto">Fecha Nacimiento: </label>
+            <strong><span name="fechaNto"> {{ paciente.0.2 }} </span></strong>
+            <br> -->
+
+            <table class="table table-striped table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>RUN</th>
+                        <th>Fecha de nacimiento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ paciente.0.0 }}</td>
+                        <td>{{ paciente.0.1 }}</td>
+                        <td>{{ paciente.0.2}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="form-group col-md-12">
+                <label id="titulo" for="vacuna">Vacuna</label>
+                <select id="vacuna" class="form-control" name="vacuna">
+                  <option selected value="0">Seleccione...</option>
+                  {% for vacuna in vacunas %}
+                    <option value="{{ vacuna.0 }}">{{ vacuna.0 }}</option>
+                {% endfor %}
+                </select>
+          </div>
+            <button type="submit" class="btn btn-dark btn-block">Guardar</button><br>
+        </form>
+    </div>
+</body>
+</html>
