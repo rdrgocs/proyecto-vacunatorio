@@ -44,7 +44,7 @@ pip install mysqlclient‑1.4.6‑cp38‑cp38‑win32.whl
 * **En el caso que diga que no puede instalar ese, ejecutamos la otra versión descargada que en este caso sería la amd:**
 
 ```bash
-mysqlclient‑1.4.6‑cp38‑cp38‑win_amd64.whl
+pip install mysqlclient‑1.4.6‑cp38‑cp38‑win_amd64.whl
 ```
 
 * **Ahora que ya lo tenemos instalado, con la consola volvemos a la carpeta de el proyecto y ejecutamos nuevamente el comando:**
