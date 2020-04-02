@@ -30,6 +30,28 @@ _En el caso que le aparezca error de acceso debe poner el siguiente comando:_
 pip install -U pip --user
 ```
 
+_En el caso de que en el momento de ejecutar el comando de instalación de requirements.txt muestre un error fatal de nombre "Microsoft Visual C++ 14.0 is required. Get it with "Microsoft Visual C++ Build Tools": https://visualstudio.microsoft.com/downloads/" se deben seguir los siguientes pasos para solucionarlo, ya que estos ocurre sólo en algunos computadores._
+
+* **Ir al sitio: https://www.lfd.uci.edu/~gohlke/pythonlibs/**
+* **Buscar el archivo tipo mysql-client correspondiente a la versión de python instalada en el computador (Ctrl + F para buscar más rápido dentro de la página) y luego descargarlo.**
+* **Por ejemplo, si se usa la versión de 3.8 de python y windows se debe descargar el archivo "mysqlclient‑1.4.6‑cp38‑cp38‑win32.whl" y el archivo "mysqlclient‑1.4.6‑cp38‑cp38‑win_amd64.whl" que son las dos opciones que corresponderán según su procesador.**
+* **Una vez descargado el archivo, abra una consola(o terminal) y diríjase a la ruta en la que está almacenado el archivo descargado (probablemente la carpeta descargas) y ejecute el comando:**
+
+```bash
+pip install mysqlclient‑1.4.6‑cp38‑cp38‑win32.whl
+```
+
+* **En el caso que diga que no puede instalar ese, ejecutamos la otra versión descargada que en este caso sería la amd:**
+
+```bash
+mysqlclient‑1.4.6‑cp38‑cp38‑win_amd64.whl
+```
+
+* **Ahora que ya lo tenemos instalado, con la consola volvemos a la carpeta de el proyecto y ejecutamos nuevamente el comando:**
+
+```bash
+pip install -r requirements.txt
+```
 
 ### Creación de base de datos local 💾
 
